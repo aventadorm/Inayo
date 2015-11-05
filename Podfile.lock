@@ -1,0 +1,32 @@
+PODS:
+  - AFNetworking (2.0.0):
+    - AFNetworking/NSURLConnection (= 2.0.0)
+    - AFNetworking/NSURLSession (= 2.0.0)
+    - AFNetworking/Reachability (= 2.0.0)
+    - AFNetworking/Security (= 2.0.0)
+    - AFNetworking/Serialization (= 2.0.0)
+    - AFNetworking/UIKit (= 2.0.0)
+  - AFNetworking/NSURLConnection (2.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.0.0)
+  - AFNetworking/Security (2.0.0)
+  - AFNetworking/Serialization (2.0.0)
+  - AFNetworking/UIKit (2.0.0):
+    - AFNetworking/NSURLConnection
+  - CBZSplashView (1.0.0)
+
+DEPENDENCIES:
+  - AFNetworking (= 2.0)
+  - CBZSplashView (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: e25f18c97427ae47e620026ecbaea03570e82251
+  CBZSplashView: 9ce4cba22024476ff4a97d6433e7347da6376016
+
+COCOAPODS: 0.38.2

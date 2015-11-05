@@ -17,6 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIViewController *viewController;
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if([[NSUserDefaults standardUserDefaults ]boolForKey:@"isLoggedin"]){
+        viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];// determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
+    }
+    else{
+        viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];
+    }
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
