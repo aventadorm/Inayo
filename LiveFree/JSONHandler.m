@@ -81,10 +81,6 @@
 
 -(void)getstoreproducts:(int)bid :(int)cid {
     __block NSMutableArray* categories = [[NSMutableArray alloc]init];
-    NSMutableArray *ids = [[NSMutableArray alloc]init];
-    NSMutableArray *names = [[NSMutableArray alloc]init];
-    NSMutableArray *urls = [[NSMutableArray alloc]init];
-    NSString *globalURL = @"http://inayoapp.com";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
