@@ -43,7 +43,7 @@ static NSString * const reuseIdentifier = @"Cell";
     idArray = ids;
     nameArray = names;
     itemcount = (int)urls.count;
-    //NSLog(@"%@",idArray);
+    NSLog(@"%@",idArray);
     //NSLog(@"%@",urls);
     //NSLog(@"%d",itemcount);
     int i = 0;
@@ -115,10 +115,14 @@ static NSString * const reuseIdentifier = @"Cell";
         NSString *ids = idArray[selectedIndexPath.row];
         //NSLog(@"%@",ids);
         
-        // load the image, to prevent it from being cached we use 'initWithContentsOfFile'
         
         TabViewController *tabviewcontroller = segue.destinationViewController;
         tabviewcontroller.ids = ids;
+        
+        UIViewController *vc1 = [[UIViewController alloc]init];
+        UIViewController *vc2 = [[UIViewController alloc]init];
+        NSArray *controllers = [NSArray arrayWithObjects:vc1,vc2,nil];
+        tabviewcontroller.viewControllers = controllers;
     }
 }
 #pragma mark <UICollectionViewDelegate>

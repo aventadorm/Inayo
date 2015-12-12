@@ -14,6 +14,7 @@
 -(void) loginSuccess;
 -(void) loginFailure;
 -(void) categoriesRetrieved:(NSMutableArray*)names :(NSMutableArray*)ids :(NSMutableArray*)urls;
+-(void) productsRetrieved:(NSMutableArray*)names :(NSMutableArray*)ids :(NSMutableArray*)urls;
 @end
 // Protocol Definition ends here
 
