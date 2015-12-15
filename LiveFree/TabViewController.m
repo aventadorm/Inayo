@@ -19,9 +19,12 @@
     // Do any additional setup after loading the view.
     NSLog(@"%@",_ids);
     JSONHandler *producthandler = [[JSONHandler alloc]init];
-    [producthandler getstoreproducts:1 :[_ids intValue]];
+    [producthandler getstoresubcategories:1 :[_ids intValue]];
 }
-
+-(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids{
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

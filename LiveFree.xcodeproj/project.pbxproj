@@ -145,6 +145,7 @@
 				D903A2FB1B8F02FF00E02DE7 /* LoginViewController.m */,
 				D94AE0871B8A0D4C000FBB14 /* ViewController.m */,
 				D94AE0861B8A0D4C000FBB14 /* ViewController.h */,
+				D9AB85D71C2062D30078818F /* Main.storyboard */,
 				D9820AA21B90852600C51F1B /* JSONHandler.h */,
 				D9820AA31B90852600C51F1B /* JSONHandler.m */,
 				D9144E621BB9011400F01FB5 /* CollectionViewCell.h */,
@@ -152,7 +153,6 @@
 				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
 				D9144E661BB9019200F01FB5 /* CollectionViewController.m */,
 				D94AE07F1B8A0D4C000FBB14 /* Supporting Files */,
-				D9AB85D71C2062D30078818F /* Main.storyboard */,
 			);
 			path = LiveFree;
 			sourceTree = "<group>";
