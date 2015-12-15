@@ -14,12 +14,12 @@
 		D94AE0821B8A0D4C000FBB14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0811B8A0D4C000FBB14 /* main.m */; };
 		D94AE0851B8A0D4C000FBB14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0841B8A0D4C000FBB14 /* AppDelegate.m */; };
 		D94AE0881B8A0D4C000FBB14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0871B8A0D4C000FBB14 /* ViewController.m */; };
-		D94AE08B1B8A0D4C000FBB14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94AE0891B8A0D4C000FBB14 /* Main.storyboard */; };
 		D94AE08D1B8A0D4C000FBB14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94AE08C1B8A0D4C000FBB14 /* Images.xcassets */; };
 		D94AE0901B8A0D4C000FBB14 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94AE08E1B8A0D4C000FBB14 /* LaunchScreen.xib */; };
 		D94AE09C1B8A0D4C000FBB14 /* LiveFreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE09B1B8A0D4C000FBB14 /* LiveFreeTests.m */; };
 		D953A0B91BE7CDF300801699 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D953A0B81BE7CDF300801699 /* TabViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D9820AA41B90852600C51F1B /* JSONHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D9820AA31B90852600C51F1B /* JSONHandler.m */; };
+		D9AB85D81C2062D30078818F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB85D71C2062D30078818F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		D9D1C1E71BB2BCD800C0362F /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1C1E61BB2BCD800C0362F /* UIColor+HexString.m */; settings = {ASSET_TAGS = (); }; };
 		D9D1C1EB1BB2BEF600C0362F /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D1C1EA1BB2BEF600C0362F /* twitterIcon.png */; settings = {ASSET_TAGS = (); }; };
 		D9D1C1ED1BB2C0C900C0362F /* inayo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D1C1EC1BB2C0C900C0362F /* inayo.png */; settings = {ASSET_TAGS = (); }; };
@@ -51,7 +51,6 @@
 		D94AE0841B8A0D4C000FBB14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D94AE0861B8A0D4C000FBB14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D94AE0871B8A0D4C000FBB14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D94AE08A1B8A0D4C000FBB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D94AE08C1B8A0D4C000FBB14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D94AE08F1B8A0D4C000FBB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D94AE0951B8A0D4C000FBB14 /* LiveFreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveFreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +60,7 @@
 		D953A0B81BE7CDF300801699 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		D9820AA21B90852600C51F1B /* JSONHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHandler.h; sourceTree = "<group>"; };
 		D9820AA31B90852600C51F1B /* JSONHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHandler.m; sourceTree = "<group>"; };
+		D9AB85D71C2062D30078818F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9D1C1E51BB2BCD800C0362F /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "LiveFree/UIColor+HexString.h"; sourceTree = "<group>"; };
 		D9D1C1E61BB2BCD800C0362F /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "LiveFree/UIColor+HexString.m"; sourceTree = "<group>"; };
 		D9D1C1EA1BB2BEF600C0362F /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
@@ -147,12 +147,12 @@
 				D94AE0861B8A0D4C000FBB14 /* ViewController.h */,
 				D9820AA21B90852600C51F1B /* JSONHandler.h */,
 				D9820AA31B90852600C51F1B /* JSONHandler.m */,
-				D94AE0891B8A0D4C000FBB14 /* Main.storyboard */,
 				D9144E621BB9011400F01FB5 /* CollectionViewCell.h */,
 				D9144E631BB9011400F01FB5 /* CollectionViewCell.m */,
 				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
 				D9144E661BB9019200F01FB5 /* CollectionViewController.m */,
 				D94AE07F1B8A0D4C000FBB14 /* Supporting Files */,
+				D9AB85D71C2062D30078818F /* Main.storyboard */,
 			);
 			path = LiveFree;
 			sourceTree = "<group>";
@@ -269,8 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D94AE08B1B8A0D4C000FBB14 /* Main.storyboard in Resources */,
 				D94AE0901B8A0D4C000FBB14 /* LaunchScreen.xib in Resources */,
+				D9AB85D81C2062D30078818F /* Main.storyboard in Resources */,
 				D9D1C1EB1BB2BEF600C0362F /* twitterIcon.png in Resources */,
 				D94AE08D1B8A0D4C000FBB14 /* Images.xcassets in Resources */,
 				D9D1C1ED1BB2C0C900C0362F /* inayo.png in Resources */,
@@ -355,14 +355,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D94AE0891B8A0D4C000FBB14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D94AE08A1B8A0D4C000FBB14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D94AE08E1B8A0D4C000FBB14 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
