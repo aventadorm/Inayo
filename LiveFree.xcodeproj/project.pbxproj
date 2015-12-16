@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A096B9C0794931975C819F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F8494B53C7713E7902458 /* libPods.a */; };
+		93D3D4F41C209D7600127E69 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3D4F31C209D7600127E69 /* locationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D903A2FC1B8F02FF00E02DE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D903A2FB1B8F02FF00E02DE7 /* LoginViewController.m */; };
 		D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E631BB9011400F01FB5 /* CollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		D9144E671BB9019200F01FB5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E661BB9019200F01FB5 /* CollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93D3D4F31C209D7600127E69 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
+		93D3D4F51C209D9100127E69 /* locationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
 		D1616826EB62184740813AAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D28F8494B53C7713E7902458 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D903A2FA1B8F02FF00E02DE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -150,8 +153,11 @@
 				D9820AA31B90852600C51F1B /* JSONHandler.m */,
 				D9144E621BB9011400F01FB5 /* CollectionViewCell.h */,
 				D9144E631BB9011400F01FB5 /* CollectionViewCell.m */,
+				D9AB85D71C2062D30078818F /* Main.storyboard */,
 				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
 				D9144E661BB9019200F01FB5 /* CollectionViewController.m */,
+				93D3D4F31C209D7600127E69 /* locationViewController.m */,
+				93D3D4F51C209D9100127E69 /* locationViewController.h */,
 				D94AE07F1B8A0D4C000FBB14 /* Supporting Files */,
 			);
 			path = LiveFree;
@@ -331,6 +337,7 @@
 				D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */,
 				D9820AA41B90852600C51F1B /* JSONHandler.m in Sources */,
 				D9D1C1E71BB2BCD800C0362F /* UIColor+HexString.m in Sources */,
+				93D3D4F41C209D7600127E69 /* locationViewController.m in Sources */,
 				D94AE0851B8A0D4C000FBB14 /* AppDelegate.m in Sources */,
 				D94AE0821B8A0D4C000FBB14 /* main.m in Sources */,
 			);
