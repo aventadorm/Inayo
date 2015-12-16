@@ -15,6 +15,7 @@
 -(void) loginFailure;
 -(void) categoriesRetrieved:(NSMutableArray*)names :(NSMutableArray*)ids :(NSMutableArray*)urls;
 -(void) productsRetrieved:(NSMutableArray*)names :(NSMutableArray*)ids :(NSMutableArray*)urls;
+-(void) subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids;
 @end
 // Protocol Definition ends here
 
@@ -28,6 +29,7 @@
 -(void)login:(NSString*)number withusernamepassword:(NSString*)password;
 -(void)signup:(NSString*)name :(NSString*)mobile :(NSString*)email :(NSString*)password;
 -(void)getstorecategories:(int)bid;
--(void)getstoreproducts:(int)bid :(int)cid;
+-(void)getstoresubcategories:(int)bid :(int)cid;
+-(void)getstoreproducts:(int)cid;
 
 @end

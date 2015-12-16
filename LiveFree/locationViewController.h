@@ -7,3 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@interface locationViewController : UIViewController
+
+@end
