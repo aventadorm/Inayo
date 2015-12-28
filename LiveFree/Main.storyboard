@@ -23,91 +23,6 @@
             </objects>
             <point key="canvasLocation" x="247" y="2185"/>
         </scene>
-        <!--Select Location-->
-        <scene sceneID="ApY-NO-KdW">
-            <objects>
-                <viewController id="yOL-2S-9xW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BB7-lf-WxO"/>
-                        <viewControllerLayoutGuide type="bottom" id="H5I-52-TtD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Eqf-Gf-OYA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-WN-fX9">
-                                <rect key="frame" x="215" y="342" width="167" height="39"/>
-                                <color key="backgroundColor" red="1" green="0.81960784313725488" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="SELECT MANUALLY"/>
-                                <connections>
-                                    <segue destination="N0O-Ug-kcs" kind="show" id="ugl-sd-SuU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="195-HX-a9S">
-                                <rect key="frame" x="215" y="235" width="167" height="38"/>
-                                <color key="backgroundColor" red="1" green="0.81960784313725488" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="167" id="Yr1-Zf-MSB"/>
-                                    <constraint firstAttribute="height" constant="38" id="iEP-Kb-s1v"/>
-                                </constraints>
-                                <state key="normal" title="USE MY LOCATION"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="195-HX-a9S" firstAttribute="leading" secondItem="UgW-WN-fX9" secondAttribute="leading" id="2Hh-nW-gcl"/>
-                            <constraint firstItem="UgW-WN-fX9" firstAttribute="top" secondItem="195-HX-a9S" secondAttribute="bottom" constant="69" id="IFs-eb-lvp"/>
-                            <constraint firstItem="H5I-52-TtD" firstAttribute="top" secondItem="UgW-WN-fX9" secondAttribute="bottom" constant="219" id="VqT-DY-3KX"/>
-                            <constraint firstItem="195-HX-a9S" firstAttribute="leading" secondItem="Eqf-Gf-OYA" secondAttribute="leading" constant="215" id="WIR-f6-Xuw"/>
-                            <constraint firstItem="195-HX-a9S" firstAttribute="trailing" secondItem="UgW-WN-fX9" secondAttribute="trailing" id="xDc-G7-td3"/>
-                            <constraint firstItem="195-HX-a9S" firstAttribute="top" secondItem="BB7-lf-WxO" secondAttribute="bottom" constant="171" id="zeq-XN-Usq"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Location" id="DWq-GP-lFF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yqR-tm-WGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="972" y="466"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YM9-QQ-fT0">
-            <objects>
-                <viewController id="N0O-Ug-kcs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HNM-7W-5MP"/>
-                        <viewControllerLayoutGuide type="bottom" id="SoK-F2-90j"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aOo-gu-qx8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20_full" translatesAutoresizingMaskIntoConstraints="NO" id="unY-59-Hbx">
-                                <rect key="frame" x="180" y="64" width="240" height="165"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijm-xT-ZG1">
-                                <rect key="frame" x="215" y="310" width="170" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Delivery Area" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-jg-dra">
-                                <rect key="frame" x="215" y="380" width="170" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="SoK-F2-90j" firstAttribute="top" secondItem="unY-59-Hbx" secondAttribute="bottom" constant="371" id="M6q-nV-mHi"/>
-                            <constraint firstItem="unY-59-Hbx" firstAttribute="top" secondItem="HNM-7W-5MP" secondAttribute="bottom" id="ODI-f1-Uq7"/>
-                            <constraint firstItem="unY-59-Hbx" firstAttribute="width" secondItem="aOo-gu-qx8" secondAttribute="width" constant="-360" id="p6b-b8-A3z"/>
-                            <constraint firstItem="unY-59-Hbx" firstAttribute="centerX" secondItem="aOo-gu-qx8" secondAttribute="centerX" id="tjY-QG-Htp"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lCv-mQ-SNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1347" y="-254"/>
-        </scene>
         <!--Collection View Controller-->
         <scene sceneID="uYY-2J-MrW">
             <objects>
@@ -173,7 +88,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddQ-gk-C4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="481"/>
+            <point key="canvasLocation" x="959" y="481"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="Hsd-5v-Cef">
@@ -193,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgT-bu-8kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3451" y="812"/>
+            <point key="canvasLocation" x="2639" y="812"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="MGV-hg-Hey">
@@ -213,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdV-pp-WCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3448" y="152"/>
+            <point key="canvasLocation" x="2636" y="152"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="zD4-d8-SyF">
@@ -232,28 +147,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffx-Qx-MY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2624" y="484"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SKC-Bx-rhV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WUb-xz-lRr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8vL-4T-BDV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yOL-2S-9xW" kind="relationship" relationship="rootViewController" id="PLX-gH-xsP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ucw-B9-Mih" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="160" y="466"/>
+            <point key="canvasLocation" x="1812" y="484"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="20_full" width="1280" height="960"/>
-    </resources>
 </document>
