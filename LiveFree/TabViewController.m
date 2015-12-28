@@ -21,7 +21,7 @@
     JSONHandler *producthandler = [[JSONHandler alloc]init];
     [producthandler getstoresubcategories:1 :[_ids intValue]];
 }
--(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids{
+-(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids :(NSUInteger)number{
     
     
 }

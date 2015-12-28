@@ -102,7 +102,7 @@
                 category[i]=[products[i] objectForKey:@"category"];
                 count[i]=[products[i] objectForKey:@"count"];
                 ids[i]=[products[i] objectForKey:@"id"];
-                [self.delegate subcategoriesRetrieved:category :count :ids];
+                [self.delegate subcategoriesRetrieved:category :count :ids :products.count];
             
             }
             NSLog(@"%@", category);

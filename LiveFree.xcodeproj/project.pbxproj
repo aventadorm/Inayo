@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A096B9C0794931975C819F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F8494B53C7713E7902458 /* libPods.a */; };
-		D903A2FC1B8F02FF00E02DE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D903A2FB1B8F02FF00E02DE7 /* LoginViewController.m */; };
 		D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E631BB9011400F01FB5 /* CollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		D9144E671BB9019200F01FB5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E661BB9019200F01FB5 /* CollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D94AE0821B8A0D4C000FBB14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0811B8A0D4C000FBB14 /* main.m */; };
@@ -38,8 +37,6 @@
 /* Begin PBXFileReference section */
 		D1616826EB62184740813AAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D28F8494B53C7713E7902458 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D903A2FA1B8F02FF00E02DE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		D903A2FB1B8F02FF00E02DE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D9144E621BB9011400F01FB5 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D9144E631BB9011400F01FB5 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		D9144E651BB9019200F01FB5 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -140,18 +137,16 @@
 			isa = PBXGroup;
 			children = (
 				D953A0B71BE7CDF300801699 /* TabViewController.h */,
-				D953A0B81BE7CDF300801699 /* TabViewController.m */,
-				D903A2FA1B8F02FF00E02DE7 /* LoginViewController.h */,
-				D903A2FB1B8F02FF00E02DE7 /* LoginViewController.m */,
 				D94AE0871B8A0D4C000FBB14 /* ViewController.m */,
+				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
 				D94AE0861B8A0D4C000FBB14 /* ViewController.h */,
-				D9AB85D71C2062D30078818F /* Main.storyboard */,
 				D9820AA21B90852600C51F1B /* JSONHandler.h */,
-				D9820AA31B90852600C51F1B /* JSONHandler.m */,
 				D9144E621BB9011400F01FB5 /* CollectionViewCell.h */,
 				D9144E631BB9011400F01FB5 /* CollectionViewCell.m */,
-				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
+				D953A0B81BE7CDF300801699 /* TabViewController.m */,
+				D9820AA31B90852600C51F1B /* JSONHandler.m */,
 				D9144E661BB9019200F01FB5 /* CollectionViewController.m */,
+				D9AB85D71C2062D30078818F /* Main.storyboard */,
 				D94AE07F1B8A0D4C000FBB14 /* Supporting Files */,
 			);
 			path = LiveFree;
@@ -325,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9144E671BB9019200F01FB5 /* CollectionViewController.m in Sources */,
-				D903A2FC1B8F02FF00E02DE7 /* LoginViewController.m in Sources */,
 				D94AE0881B8A0D4C000FBB14 /* ViewController.m in Sources */,
 				D953A0B91BE7CDF300801699 /* TabViewController.m in Sources */,
 				D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */,
