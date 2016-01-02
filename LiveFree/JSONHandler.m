@@ -98,7 +98,6 @@
             products = [response objectForKey:@"category"];
             for(int i = 0;i<products.count;i++)
             {
-                NSLog(@"Entered here");
                 category[i]=[products[i] objectForKey:@"category"];
                 count[i]=[products[i] objectForKey:@"count"];
                 ids[i]=[products[i] objectForKey:@"id"];

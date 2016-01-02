@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "TabViewController.h"
+#import "LoadViewController.h"
 @interface CollectionViewController ()
 
 @end
@@ -115,14 +116,10 @@ static NSString * const reuseIdentifier = @"Cell";
         NSString *ids = idArray[selectedIndexPath.row];
         //NSLog(@"%@",ids);
         
+        LoadViewController* loadviewcontroller = segue.destinationViewController;
+        loadviewcontroller.ids = ids;
         
-        TabViewController *tabviewcontroller = segue.destinationViewController;
-        tabviewcontroller.ids = ids;
         
-        UIViewController *vc1 = [[UIViewController alloc]init];
-        UIViewController *vc2 = [[UIViewController alloc]init];
-        NSArray *controllers = [NSArray arrayWithObjects:vc1,vc2,nil];
-        tabviewcontroller.viewControllers = controllers;
     }
 }
 #pragma mark <UICollectionViewDelegate>

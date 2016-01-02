@@ -17,6 +17,8 @@
 		D94AE0901B8A0D4C000FBB14 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94AE08E1B8A0D4C000FBB14 /* LaunchScreen.xib */; };
 		D94AE09C1B8A0D4C000FBB14 /* LiveFreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE09B1B8A0D4C000FBB14 /* LiveFreeTests.m */; };
 		D953A0B91BE7CDF300801699 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D953A0B81BE7CDF300801699 /* TabViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D9618C111C38141500C8CBC0 /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C101C38141500C8CBC0 /* ProductsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D9618C561C386FEA00C8CBC0 /* LoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C551C386FEA00C8CBC0 /* LoadViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D9820AA41B90852600C51F1B /* JSONHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D9820AA31B90852600C51F1B /* JSONHandler.m */; };
 		D9AB85D81C2062D30078818F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB85D71C2062D30078818F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		D9D1C1E71BB2BCD800C0362F /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1C1E61BB2BCD800C0362F /* UIColor+HexString.m */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +57,10 @@
 		D94AE09B1B8A0D4C000FBB14 /* LiveFreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveFreeTests.m; sourceTree = "<group>"; };
 		D953A0B71BE7CDF300801699 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		D953A0B81BE7CDF300801699 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		D9618C0F1C38141500C8CBC0 /* ProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableViewController.h; sourceTree = "<group>"; };
+		D9618C101C38141500C8CBC0 /* ProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableViewController.m; sourceTree = "<group>"; };
+		D9618C541C386FEA00C8CBC0 /* LoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadViewController.h; sourceTree = "<group>"; };
+		D9618C551C386FEA00C8CBC0 /* LoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadViewController.m; sourceTree = "<group>"; };
 		D9820AA21B90852600C51F1B /* JSONHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHandler.h; sourceTree = "<group>"; };
 		D9820AA31B90852600C51F1B /* JSONHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHandler.m; sourceTree = "<group>"; };
 		D9AB85D71C2062D30078818F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -140,14 +146,18 @@
 				D94AE0871B8A0D4C000FBB14 /* ViewController.m */,
 				D9144E651BB9019200F01FB5 /* CollectionViewController.h */,
 				D94AE0861B8A0D4C000FBB14 /* ViewController.h */,
+				D953A0B81BE7CDF300801699 /* TabViewController.m */,
 				D9820AA21B90852600C51F1B /* JSONHandler.h */,
 				D9144E621BB9011400F01FB5 /* CollectionViewCell.h */,
 				D9144E631BB9011400F01FB5 /* CollectionViewCell.m */,
-				D953A0B81BE7CDF300801699 /* TabViewController.m */,
 				D9820AA31B90852600C51F1B /* JSONHandler.m */,
 				D9144E661BB9019200F01FB5 /* CollectionViewController.m */,
+				D9618C551C386FEA00C8CBC0 /* LoadViewController.m */,
 				D9AB85D71C2062D30078818F /* Main.storyboard */,
 				D94AE07F1B8A0D4C000FBB14 /* Supporting Files */,
+				D9618C0F1C38141500C8CBC0 /* ProductsTableViewController.h */,
+				D9618C101C38141500C8CBC0 /* ProductsTableViewController.m */,
+				D9618C541C386FEA00C8CBC0 /* LoadViewController.h */,
 			);
 			path = LiveFree;
 			sourceTree = "<group>";
@@ -327,6 +337,8 @@
 				D9D1C1E71BB2BCD800C0362F /* UIColor+HexString.m in Sources */,
 				D94AE0851B8A0D4C000FBB14 /* AppDelegate.m in Sources */,
 				D94AE0821B8A0D4C000FBB14 /* main.m in Sources */,
+				D9618C561C386FEA00C8CBC0 /* LoadViewController.m in Sources */,
+				D9618C111C38141500C8CBC0 /* ProductsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

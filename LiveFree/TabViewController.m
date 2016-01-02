@@ -7,24 +7,20 @@
 //
 
 #import "TabViewController.h"
+#import "ProductsTableViewController.h"
 
 @interface TabViewController ()
 
 @end
 
 @implementation TabViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@",_ids);
-    JSONHandler *producthandler = [[JSONHandler alloc]init];
-    [producthandler getstoresubcategories:1 :[_ids intValue]];
-}
--(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids :(NSUInteger)number{
     
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
