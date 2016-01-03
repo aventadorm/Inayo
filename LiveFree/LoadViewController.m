@@ -27,23 +27,24 @@ NSMutableArray* controllerarray;
     
 }
 -(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids :(NSUInteger)number{
-     UITabBarController* tabbarcontroller = [[UITabBarController alloc]init];
+    //SubCategoryTableViewController *sctvc = [[SubCategoryTableViewController alloc]init];
      controllerarray = [[NSMutableArray alloc]init];
      for(int i=0 ; i<number; i++){
          ProductsTableViewController* ptvc = [[ProductsTableViewController alloc]init];
+         ptvc.category = category[i];
+         ptvc.count = count[i];
+         ptvc.ids = ids[i];
+         NSLog(@"%@",category);
          UIImage* anImage = NULL;
          //UIImage* anImage = [UIImage imageNamed:@"inayo.png"];
-         UITabBarItem* theItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:anImage tag:0];
+         UITabBarItem* theItem = [[UITabBarItem alloc] initWithTitle:category[i] image:anImage tag:0];
          ptvc.tabBarItem = theItem;
          controllerarray[i] = ptvc;
          
          
      
-         //create viewcontrollers and add to array
-         //add tabbaritem to viewcontroller
         }
-     tabbarcontroller.viewControllers = controllerarray;
-    [self presentModalViewController:tabbarcontroller animated:YES];
+  //  [self presentViewController:tabbarcontroller animated:NO completion:nil];
     
      
      
@@ -54,7 +55,55 @@ NSMutableArray* controllerarray;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - Page View Controller Data Source
 
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((ProductsTableViewController*) viewController).pageIndex;
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index--;
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((ProductsTableViewController*) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index++;
+    if (index == [self.pageTitles count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+}
+- (ProductsTableViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    ProductsTableViewController *ptvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    ptvc.pageIndex = index;
+    
+    return ptvc;
+}
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self.pageTitles count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
 /*
 #pragma mark - Navigation
 

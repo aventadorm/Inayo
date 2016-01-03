@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductsTableViewController.h"
 
-@interface LoadViewController : UIViewController
+@interface LoadViewController : UIViewController <UIPageViewControllerDataSource>
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageTitles;
 @property NSString *ids;
 @end

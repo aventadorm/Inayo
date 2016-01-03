@@ -19,14 +19,11 @@ PODS:
   - AFNetworking/Serialization (2.0.0)
   - AFNetworking/UIKit (2.0.0):
     - AFNetworking/NSURLConnection
-  - CBZSplashView (1.0.0)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.0)
-  - CBZSplashView (~> 1.0.0)
+  - AFNetworking (~> 2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: e25f18c97427ae47e620026ecbaea03570e82251
-  CBZSplashView: 9ce4cba22024476ff4a97d6433e7347da6376016
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

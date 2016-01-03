@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductsTableViewController : UITableViewController
-
+@property NSString *category;
+@property NSUInteger pageIndex;
+@property NSNumber *count, *ids;
 @end

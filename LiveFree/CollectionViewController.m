@@ -8,7 +8,6 @@
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
-#import "TabViewController.h"
 #import "LoadViewController.h"
 @interface CollectionViewController ()
 

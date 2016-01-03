@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CBZSplashView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03896187002CFE3558197E0A7C55009E</key>
+		<key>8D79BD54EC59A11D4808C9D682D5F790</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4DD5A374008EE48223075602CEAF4405</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E1F48D90AE70918BD22858FBE00D11C0</key>
+		<key>C6D66FE7D3AD8963382F17E79643E1B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
