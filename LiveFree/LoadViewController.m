@@ -15,46 +15,61 @@
 @end
 
 @implementation LoadViewController
-NSMutableArray* controllerarray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@",_ids);
+    //NSLog(@"%@",_ids);
     JSONHandler *producthandler = [[JSONHandler alloc]init];
     producthandler.delegate = self;
     [producthandler getstoresubcategories:1 :[_ids intValue]];
-    
 }
+
+
 -(void)subcategoriesRetrieved:(NSMutableArray*)category :(NSMutableArray*)count :(NSMutableArray*)ids :(NSUInteger)number{
-    //SubCategoryTableViewController *sctvc = [[SubCategoryTableViewController alloc]init];
-     controllerarray = [[NSMutableArray alloc]init];
-     for(int i=0 ; i<number; i++){
-         ProductsTableViewController* ptvc = [[ProductsTableViewController alloc]init];
-         ptvc.category = category[i];
-         ptvc.count = count[i];
-         ptvc.ids = ids[i];
-         NSLog(@"%@",category);
-         UIImage* anImage = NULL;
-         //UIImage* anImage = [UIImage imageNamed:@"inayo.png"];
-         UITabBarItem* theItem = [[UITabBarItem alloc] initWithTitle:category[i] image:anImage tag:0];
-         ptvc.tabBarItem = theItem;
-         controllerarray[i] = ptvc;
+    //Setting array of each category name, product count and category ID
+    _pageTitles = category;
+    _pageCounts = count;
+    _pageIDs = ids;
+    
+    
+    
+    // Create page view controller
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    
+    //Create the first controller and add to array
+    ProductsTableViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewcontrollers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewcontrollers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    //Change the size of page view controller
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    
+    [self addChildViewController:_pageViewController];
+    [self.view addSubview:_pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+   
          
          
      
-        }
-  //  [self presentViewController:tabbarcontroller animated:NO completion:nil];
-    
-     
-     
-    
-    
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (ProductsTableViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    ProductsTableViewController *productsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    productsTableViewController.category = self.pageTitles[index];
+    productsTableViewController.categoryid = (int)self.pageIDs[index];
+    productsTableViewController.productcount = (int)self.pageCounts[index];
+    productsTableViewController.pageIndex = index;
+    
+    return productsTableViewController;
 }
+
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
@@ -83,18 +98,8 @@ NSMutableArray* controllerarray;
     }
     return [self viewControllerAtIndex:index];
 }
-- (ProductsTableViewController *)viewControllerAtIndex:(NSUInteger)index
-{
-    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
-        return nil;
-    }
-    
-    // Create a new view controller and pass suitable data.
-    ProductsTableViewController *ptvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    ptvc.pageIndex = index;
-    
-    return ptvc;
-}
+
+
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
     return [self.pageTitles count];
@@ -104,14 +109,9 @@ NSMutableArray* controllerarray;
 {
     return 0;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-*/
-
 @end

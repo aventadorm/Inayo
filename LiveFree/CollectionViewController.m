@@ -43,7 +43,7 @@ static NSString * const reuseIdentifier = @"Cell";
     idArray = ids;
     nameArray = names;
     itemcount = (int)urls.count;
-    NSLog(@"%@",idArray);
+    //NSLog(@"%@",idArray);
     //NSLog(@"%@",urls);
     //NSLog(@"%d",itemcount);
     int i = 0;
@@ -53,6 +53,7 @@ static NSString * const reuseIdentifier = @"Cell";
     __block int imagecounter = 0;
     for(i = 0;i < urls.count;i++){
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urls[i]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
         imageArray[i] = [UIImage imageWithData:data];
         imagecounter++;
         if(imagecounter == urls.count){

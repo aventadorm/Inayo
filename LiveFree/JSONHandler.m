@@ -55,7 +55,7 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     NSDictionary *parameters = @{@"bid": [NSNumber numberWithInt:bid] };
     [manager POST:@"http://www.inayoapp.com/api/v1/store/store_categories/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"JSON: %@", responseObject);1
+        //NSLog(@"JSON: %@", responseObject);
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *response = responseObject;
@@ -64,7 +64,7 @@
                 {
                 names[i]=[categories[i] objectForKey:@"name"];
                 ids[i]=[categories[i] objectForKey:@"id"];
-                urls[i]= [NSString stringWithFormat:@"%@%@",globalURL,[categories[i] objectForKey:@"image"]];
+                urls[i] = [NSString stringWithFormat:@"%@%@",globalURL,[categories[i] objectForKey:@"image"]];
                 }
             [self.delegate categoriesRetrieved:names :ids :urls];
             
@@ -91,7 +91,7 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     NSDictionary *parameters = @{@"bid": [NSNumber numberWithInt:bid] , @"cid" : [NSNumber numberWithInt:cid]};
     [manager POST:@"http://www.inayoapp.com/api/v1/store/categories/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        //NSLog(@"JSON: %@", responseObject);
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *response = responseObject;
@@ -103,7 +103,7 @@
                 ids[i]=[products[i] objectForKey:@"id"];
             }
             [self.delegate subcategoriesRetrieved:category :count :ids :products.count];
-            NSLog(@"%@", category);
+            //NSLog(@"%@", category);
         }else if ([responseObject isKindOfClass:[NSArray class]]) {
             
             NSLog(@"Response is an array");
@@ -114,6 +114,7 @@
 }
 -(void)getstoreproducts:(int)bid :(int)cid{
     __block NSMutableArray* products = [[NSMutableArray alloc]init];
+    NSString *globalmediaURL = @"http://inayoapp.com/media/";
     NSMutableArray *catid = [[NSMutableArray alloc]init];
     NSMutableArray *desc = [[NSMutableArray alloc]init];
     NSMutableArray *details = [[NSMutableArray alloc]init];
@@ -137,34 +138,35 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     NSDictionary *parameters = @{@"bid": [NSNumber numberWithInt:bid] , @"cid" : [NSNumber numberWithInt:cid]};
-    [manager POST:@"http://www.inayoapp.com/api/v1/store/categories/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://www.inayoapp.com/api/v1/store/products/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *response = responseObject;
             products = [response objectForKey:@"category"];
-            for(int i = 0;i<products.count;i++)
+            NSLog(@"%@",products);
+            for(int i = 0;i < products.count;i++)
             {
-                NSLog(@"Entered here");
+                //NSLog(@"Entered here");
                 catid[i]=[products[i] objectForKey:@"catid"];
                 desc[i]=[products[i] objectForKey:@"desc"];
                 details[i]=[products[i] objectForKey:@"details"];
                 flavor[i]=[products[i] objectForKey:@"flavor"];
                 height[i]=[products[i] objectForKey:@"height"];
                 ids[i]=[products[i] objectForKey:@"id"];
-                image[i]=[products[i] objectForKey:@"image"];
+                image[i] = [NSString stringWithFormat:@"%@%@",globalmediaURL,[products[i] objectForKey:@"image"]];
                 item_is[i]=[products[i] objectForKey:@"item_is"];
-                medium_image[i]=[products[i] objectForKey:@"medium_image"];
+                medium_image[i]=[NSString stringWithFormat:@"%@%@",globalmediaURL,[products[i] objectForKey:@"medium_image"]];
                 model[i]=[products[i] objectForKey:@"model"];
                 name[i]=[products[i] objectForKey:@"name"];
                 price[i]=[products[i] objectForKey:@"price"];
                 sale_price[i]=[products[i] objectForKey:@"sale_price"];
                 size[i]=[products[i] objectForKey:@"size"];
-                small_image[i]=[products[i] objectForKey:@"small_image"];
+                small_image[i]=[NSString stringWithFormat:@"%@%@",globalmediaURL,[products[i] objectForKey:@"small_image"]];
                 weight[i]=[products[i] objectForKey:@"weight"];
                 width[i]=[products[i] objectForKey:@"width"];
-                
-            }
+               }
+            [self.delegate productsRetrieved:catid :desc :details :flavor :height :ids :image :item_is :medium_image :model :name :price :sale_price :size :small_image :weight :width];
         }else if ([responseObject isKindOfClass:[NSArray class]]) {
             
             NSLog(@"Response is an array");
@@ -173,10 +175,7 @@
         NSLog(@"Error: %@", operation.responseString);
     }];
 }
-/*
- 
 
- */
 @end
 
 

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSONHandler.h"
 
-@interface ProductsTableViewController : UITableViewController
+@interface ProductsTableViewController : UITableViewController<JSONHandlerDelegate>{
+    NSMutableArray *imageArray, *nameArray, *sizeArray, *priceArray;
+    BOOL loadBool;
+}
 @property NSString *category;
-@property NSUInteger pageIndex;
+@property NSInteger pageIndex, productcount, categoryid;
 @property NSNumber *count, *ids;
+
 @end

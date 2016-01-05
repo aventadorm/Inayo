@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *trialLabel;
 
 @end
