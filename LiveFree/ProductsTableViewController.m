@@ -23,9 +23,11 @@
     priceArray = [[NSMutableArray alloc]init];
     sizeArray = [[NSMutableArray alloc]init];
     loadBool = false;
+    self.productcount = 0;
     JSONHandler *productHandler = [[JSONHandler alloc]init];
     productHandler.delegate = self;
-    [productHandler getstoreproducts :(int)self.categoryid :1];
+    NSLog(@"catid is %d",self.categoryid);
+    [productHandler getstoreproducts :self.categoryid];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -47,7 +49,7 @@
     nameArray = name;
     priceArray = price;
     sizeArray = size;
-    NSLog(@"%@",image);
+    NSLog(@"%@",small_image);
     int i = 0;
     for(i = 0;i < image.count;i++){
         imageArray[i]=[NSNull null];
@@ -55,12 +57,12 @@
     __block int imagecounter = 0;
     for(i = 0;i < small_image.count;i++){
         [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:small_image[i]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-            if(imageArray[i]){
-                NSLog(@"something");}
+            NSLog(@"%d",i);
             imageArray[i] = [UIImage imageWithData:data];
             imagecounter++;
             if(imagecounter == image.count){
                 loadBool = true;
+                self.productcount = image.count;
                 [self.tableView reloadData];
             }
         }];
@@ -94,6 +96,7 @@
     return cell;
     
 }
+
 
 
 /*

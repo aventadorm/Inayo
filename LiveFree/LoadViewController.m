@@ -64,7 +64,6 @@
     ProductsTableViewController *productsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     productsTableViewController.category = self.pageTitles[index];
     productsTableViewController.categoryid = (int)self.pageIDs[index];
-    productsTableViewController.productcount = (int)self.pageCounts[index];
     productsTableViewController.pageIndex = index;
     
     return productsTableViewController;

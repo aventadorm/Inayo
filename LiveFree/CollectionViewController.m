@@ -118,6 +118,7 @@ static NSString * const reuseIdentifier = @"Cell";
         
         LoadViewController* loadviewcontroller = segue.destinationViewController;
         loadviewcontroller.ids = ids;
+        //NSLog(@"ID is %@",ids);
         
         
     }
