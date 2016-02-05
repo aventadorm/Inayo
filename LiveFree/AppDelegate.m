@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CollectionViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,21 +18,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UIViewController *viewController;
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    //Scroll indicator code
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    if([[NSUserDefaults standardUserDefaults ]boolForKey:@"isLoggedin"]){
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];// determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
-    }
-    else{
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];
-    }
-    self.window.rootViewController = viewController;
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    navigationController.navigationBar.translucent = NO;
+    
+    //self.window.rootViewController = viewController;
+    self.window.rootViewController = navigationController;
+    //navigationController.navigationBar.barTintColor = [UIColor colorWithRed:44.0/255.0 green:51.0/255.0 blue:87.0/255.0 alpha:1.0];
+    //navigationController.navigationBar.barTintColor = [UIColor colorWithRed:64.0f green:64.0f blue:64.0f alpha:1.0];
     [self.window makeKeyAndVisible];
     
     return YES;
 }
+/*- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ // Override point for customization after application launch.
+ 
+ //Scroll indicator code
+ UIPageControl *pageControl = [UIPageControl appearance];
+ pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+ pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+ pageControl.backgroundColor = [UIColor whiteColor];
+ 
+ 
+ UIViewController *viewController;
+ self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+ 
+ UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+ if([[NSUserDefaults standardUserDefaults ]boolForKey:@"isLoggedin"]){
+ viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];// determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
+ }
+ else{
+ viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];
+ }
+ self.window.rootViewController = viewController;
+ [self.window makeKeyAndVisible];
+ 
+ return YES;
+ }*/
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

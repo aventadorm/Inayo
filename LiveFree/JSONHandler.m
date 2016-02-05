@@ -21,7 +21,7 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    NSDictionary *parameters = @{@"bid": [NSNumber numberWithInt:bid] };
+    NSDictionary *parameters = @{@"bid": [NSNumber numberWithInt:bid],@"versionCode": [NSNumber numberWithInt:29] };
     [manager POST:@"http://www.inayoapp.com/api/v1/store/store_categories/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSLog(@"JSON: %@", responseObject);
         

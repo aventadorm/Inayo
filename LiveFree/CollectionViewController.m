@@ -9,20 +9,44 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "LoadViewController.h"
+#import "MBProgressHUD.h"
 @interface CollectionViewController ()
 
 @end
 
-@implementation CollectionViewController
+@implementation CollectionViewController 
 
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UINavigationController *navigationController = self.navigationController;
+    self.navigationItem.title = @"Inayo";
+    
+    UIImage *bagimage = [[UIImage imageNamed:@"bag_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *rightbutton = [[UIBarButtonItem alloc] initWithImage:bagimage style:UIBarButtonItemStylePlain target:self action:@selector(CartIcon)];
+    self.navigationItem.rightBarButtonItem = rightbutton;
+    //navigationController.navigationItem.rightBarButtonItem = rightbutton;
+    
+    
     imageArray = [[NSMutableArray alloc]init];
     nameArray = [[NSMutableArray alloc]init];
     idArray = [[NSMutableArray alloc]init];
     loadBool = false;
+    
+    
+    
+    //Progress Indicator
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    // Set determinate mode
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    [HUD show:YES];
+    
+    
+    
+    
     JSONHandler *categoriesHandler = [[JSONHandler alloc]init];
     categoriesHandler.delegate = self;
     [categoriesHandler getstorecategories:1];
@@ -34,7 +58,9 @@ static NSString * const reuseIdentifier = @"Cell";
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
 }
-
+-(void)CartIcon{
+    NSLog(@"Clicked");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,12 +82,22 @@ static NSString * const reuseIdentifier = @"Cell";
         
         imageArray[i] = [UIImage imageWithData:data];
         imagecounter++;
+        //Calculate percentage completion
+        float progress = 0.0f;
+        progress = (float)imagecounter/(float)urls.count;
+        HUD.progress = progress;
+        
         if(imagecounter == urls.count){
             loadBool = true;
+            HUD.progress=1.0f;
+            [HUD hide:YES];
             [self.collectionView reloadData];
         }
     }];
     }
+    
+}
+-(void)updateLoader{
     
     
 }

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "JSONHandler.h"
+#import "MBProgressHUD.h"
 
-@interface CollectionViewController : UICollectionViewController<JSONHandlerDelegate>{
+@interface CollectionViewController : UICollectionViewController<JSONHandlerDelegate,MBProgressHUDDelegate>{
+    MBProgressHUD *HUD;
     int itemcount;
     NSMutableArray *imageArray, *nameArray, *idArray;
     BOOL loadBool;

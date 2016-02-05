@@ -18,15 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *bagimage = [[UIImage imageNamed:@"bag_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *rightbutton = [[UIBarButtonItem alloc] initWithImage:bagimage style:UIBarButtonItemStylePlain target:self action:@selector(CartIcon)];
+    self.navigationItem.rightBarButtonItem = rightbutton;
+    //self.navigationItem.title.
     imageArray = [[NSMutableArray alloc]init];
     nameArray = [[NSMutableArray alloc]init];
     priceArray = [[NSMutableArray alloc]init];
     sizeArray = [[NSMutableArray alloc]init];
     loadBool = false;
+    
+    //Progress Indicator
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    // Set determinate mode
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    HUD.delegate = self;
+    HUD.labelText = @"Loading products";
+    [HUD show:YES];
+    
     self.productcount = 0;
     JSONHandler *productHandler = [[JSONHandler alloc]init];
     productHandler.delegate = self;
-    NSLog(@"catid is %d",self.categoryid);
+    NSLog(@"catid is %ld",(long)self.categoryid);
     [productHandler getstoreproducts :self.categoryid];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,7 +51,14 @@
     //NSLog(@"%@",self.category);
 }
 
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Whatever" style:UIBarButtonItemStylePlain target:self action:@selector(doSomething)];
+    self.navigationItem.title = self.category;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -55,12 +75,22 @@
         imageArray[i]=[NSNull null];
     }
     __block int imagecounter = 0;
+    //NSLog(small_image);
     for(i = 0;i < small_image.count;i++){
         [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:small_image[i]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
             NSLog(@"%d",i);
             imageArray[i] = [UIImage imageWithData:data];
             imagecounter++;
+            //Calculate percentage completion
+            float progress = 0.0f;
+            progress = (float)imagecounter/(float)image.count;
+            NSLog(@"Progress is %f",progress);
+            HUD.progress = progress;
+            
+            
             if(imagecounter == image.count){
+                HUD.progress=1.0f;
+                [HUD hide:YES];
                 loadBool = true;
                 self.productcount = image.count;
                 [self.tableView reloadData];
@@ -80,13 +110,22 @@
     return self.productcount;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        return tableView.bounds.size.width/4;
+    }
+    else
+        return tableView.bounds.size.width/4;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tCell" forIndexPath:indexPath];
-    
+    //tableView.estimatedRowHeight = 100;
+    //tableView.rowHeight = UITableViewAutomaticDimension;
     if(loadBool){
-        cell.trialLabel.text = nameArray[indexPath.row];
-        cell.trialLabel.textAlignment = NSTextAlignmentCenter;
+        cell.titleText = nameArray[indexPath.row];
+        cell.quantityText = sizeArray[indexPath.row];
+        cell.priceText = priceArray[indexPath.row];
         //NSLog(@"%@",cell.tlabel.text);
         cell.imageView.image = imageArray[indexPath.row];
     }

@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A096B9C0794931975C819F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F8494B53C7713E7902458 /* libPods.a */; };
-		D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E631BB9011400F01FB5 /* CollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		D9144E671BB9019200F01FB5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E661BB9019200F01FB5 /* CollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6966E9F9B7CDED3D77395D73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB428062AA802CDC87B16A2 /* libPods.a */; };
+		D9144E641BB9011400F01FB5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E631BB9011400F01FB5 /* CollectionViewCell.m */; };
+		D9144E671BB9019200F01FB5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9144E661BB9019200F01FB5 /* CollectionViewController.m */; };
 		D94AE0821B8A0D4C000FBB14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0811B8A0D4C000FBB14 /* main.m */; };
 		D94AE0851B8A0D4C000FBB14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE0841B8A0D4C000FBB14 /* AppDelegate.m */; };
 		D94AE08D1B8A0D4C000FBB14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94AE08C1B8A0D4C000FBB14 /* Images.xcassets */; };
 		D94AE0901B8A0D4C000FBB14 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94AE08E1B8A0D4C000FBB14 /* LaunchScreen.xib */; };
 		D94AE09C1B8A0D4C000FBB14 /* LiveFreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D94AE09B1B8A0D4C000FBB14 /* LiveFreeTests.m */; };
-		D9618C111C38141500C8CBC0 /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C101C38141500C8CBC0 /* ProductsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		D9618C561C386FEA00C8CBC0 /* LoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C551C386FEA00C8CBC0 /* LoadViewController.m */; settings = {ASSET_TAGS = (); }; };
-		D9618C591C38D97200C8CBC0 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C581C38D97200C8CBC0 /* ProductTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		D9618C111C38141500C8CBC0 /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C101C38141500C8CBC0 /* ProductsTableViewController.m */; };
+		D9618C561C386FEA00C8CBC0 /* LoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C551C386FEA00C8CBC0 /* LoadViewController.m */; };
+		D9618C591C38D97200C8CBC0 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9618C581C38D97200C8CBC0 /* ProductTableViewCell.m */; };
 		D9820AA41B90852600C51F1B /* JSONHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D9820AA31B90852600C51F1B /* JSONHandler.m */; };
-		D9AB85D81C2062D30078818F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB85D71C2062D30078818F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		D9D1C1ED1BB2C0C900C0362F /* inayo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D1C1EC1BB2C0C900C0362F /* inayo.png */; settings = {ASSET_TAGS = (); }; };
+		D9AB85D81C2062D30078818F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB85D71C2062D30078818F /* Main.storyboard */; };
+		D9D1C1ED1BB2C0C900C0362F /* inayo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D1C1EC1BB2C0C900C0362F /* inayo.png */; };
+		D9EC73031C5FCC63004810CC /* CartAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC73021C5FCC63004810CC /* CartAPI.m */; };
+		D9EC73061C5FD07B004810CC /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC73051C5FD07B004810CC /* PersistencyManager.m */; };
+		D9EC73091C5FD10B004810CC /* CartObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC73081C5FD10B004810CC /* CartObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D1616826EB62184740813AAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		D28F8494B53C7713E7902458 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA12147F08D3E11EEBD5E96 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7BB428062AA802CDC87B16A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B081337E9D34951520123391 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9144E621BB9011400F01FB5 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D9144E631BB9011400F01FB5 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		D9144E651BB9019200F01FB5 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -60,7 +64,12 @@
 		D9820AA31B90852600C51F1B /* JSONHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHandler.m; sourceTree = "<group>"; };
 		D9AB85D71C2062D30078818F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9D1C1EC1BB2C0C900C0362F /* inayo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inayo.png; sourceTree = "<group>"; };
-		E8991F138745AA85CED41037 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D9EC73011C5FCC63004810CC /* CartAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartAPI.h; sourceTree = "<group>"; };
+		D9EC73021C5FCC63004810CC /* CartAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartAPI.m; sourceTree = "<group>"; };
+		D9EC73041C5FD07B004810CC /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		D9EC73051C5FD07B004810CC /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
+		D9EC73071C5FD10B004810CC /* CartObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartObject.h; sourceTree = "<group>"; };
+		D9EC73081C5FD10B004810CC /* CartObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A096B9C0794931975C819F8 /* libPods.a in Frameworks */,
+				6966E9F9B7CDED3D77395D73 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,21 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D5717D07A272664D9615C33 /* Pods */ = {
+		3210FD782B244B2D82976472 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D1616826EB62184740813AAB /* Pods.debug.xcconfig */,
-				E8991F138745AA85CED41037 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		0FA83EFC4DEEE5F2D84B152B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D28F8494B53C7713E7902458 /* libPods.a */,
+				7BB428062AA802CDC87B16A2 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67DC3FFDAEEA9BB98DB4EFDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EA12147F08D3E11EEBD5E96 /* Pods.debug.xcconfig */,
+				B081337E9D34951520123391 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D9144E591BB811EC00F01FB5 /* Crap */ = {
@@ -110,12 +119,18 @@
 		D94AE0731B8A0D4C000FBB14 = {
 			isa = PBXGroup;
 			children = (
+				D9EC73071C5FD10B004810CC /* CartObject.h */,
+				D9EC73081C5FD10B004810CC /* CartObject.m */,
+				D9EC73041C5FD07B004810CC /* PersistencyManager.h */,
+				D9EC73051C5FD07B004810CC /* PersistencyManager.m */,
+				D9EC73011C5FCC63004810CC /* CartAPI.h */,
+				D9EC73021C5FCC63004810CC /* CartAPI.m */,
 				D94AE07E1B8A0D4C000FBB14 /* LiveFree */,
 				D9144E591BB811EC00F01FB5 /* Crap */,
 				D94AE0981B8A0D4C000FBB14 /* LiveFreeTests */,
 				D94AE07D1B8A0D4C000FBB14 /* Products */,
-				0D5717D07A272664D9615C33 /* Pods */,
-				0FA83EFC4DEEE5F2D84B152B /* Frameworks */,
+				67DC3FFDAEEA9BB98DB4EFDB /* Pods */,
+				3210FD782B244B2D82976472 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,12 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D94AE09F1B8A0D4C000FBB14 /* Build configuration list for PBXNativeTarget "LiveFree" */;
 			buildPhases = (
-				D2375E0822FC46095ABABCC8 /* Check Pods Manifest.lock */,
+				985986B99B82785D34544370 /* Check Pods Manifest.lock */,
 				D94AE0781B8A0D4C000FBB14 /* Sources */,
 				D94AE0791B8A0D4C000FBB14 /* Frameworks */,
 				D94AE07A1B8A0D4C000FBB14 /* Resources */,
-				18AA1017B9925C305BE4A53A /* Copy Pods Resources */,
-				997C92B4F39CB93DDEE59DBE /* Embed Pods Frameworks */,
+				EDD8BC1E22CA5C2A5FE357FA /* Embed Pods Frameworks */,
+				6074C87B499427F0A2230C76 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +246,7 @@
 				TargetAttributes = {
 					D94AE07B1B8A0D4C000FBB14 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = RQVNW8L9ZP;
 					};
 					D94AE0941B8A0D4C000FBB14 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -279,7 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18AA1017B9925C305BE4A53A /* Copy Pods Resources */ = {
+		6074C87B499427F0A2230C76 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,22 +310,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		997C92B4F39CB93DDEE59DBE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2375E0822FC46095ABABCC8 /* Check Pods Manifest.lock */ = {
+		985986B99B82785D34544370 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,6 +325,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		EDD8BC1E22CA5C2A5FE357FA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -336,9 +352,12 @@
 				D9820AA41B90852600C51F1B /* JSONHandler.m in Sources */,
 				D94AE0851B8A0D4C000FBB14 /* AppDelegate.m in Sources */,
 				D9618C591C38D97200C8CBC0 /* ProductTableViewCell.m in Sources */,
+				D9EC73031C5FCC63004810CC /* CartAPI.m in Sources */,
 				D94AE0821B8A0D4C000FBB14 /* main.m in Sources */,
+				D9EC73091C5FD10B004810CC /* CartObject.m in Sources */,
 				D9618C561C386FEA00C8CBC0 /* LoadViewController.m in Sources */,
 				D9618C111C38141500C8CBC0 /* ProductsTableViewController.m in Sources */,
+				D9EC73061C5FD07B004810CC /* PersistencyManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,26 +472,32 @@
 		};
 		D94AE0A01B8A0D4C000FBB14 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1616826EB62184740813AAB /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6EA12147F08D3E11EEBD5E96 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LiveFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "livefree.pos.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pos.livefree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D94AE0A11B8A0D4C000FBB14 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8991F138745AA85CED41037 /* Pods.release.xcconfig */;
+			baseConfigurationReference = B081337E9D34951520123391 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LiveFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "livefree.pos.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pos.livefree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

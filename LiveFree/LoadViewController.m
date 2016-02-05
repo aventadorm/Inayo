@@ -22,7 +22,7 @@
     //NSLog(@"%@",_ids);
     JSONHandler *producthandler = [[JSONHandler alloc]init];
     producthandler.delegate = self;
-    [producthandler getstoresubcategories:1 :[_ids intValue]];
+    [producthandler getstoresubcategories:1 :[self.ids intValue]];
 }
 
 
@@ -31,12 +31,15 @@
     _pageTitles = category;
     _pageCounts = count;
     _pageIDs = ids;
+    //NSLog(@"%@",self.pageTitles);
+    //NSLog(@"%@",self.pageIDs);
     
     
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
+    
     
     //Create the first controller and add to array
     ProductsTableViewController *startingViewController = [self viewControllerAtIndex:0];
@@ -63,8 +66,16 @@
     // Create a new view controller and pass suitable data.
     ProductsTableViewController *productsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     productsTableViewController.category = self.pageTitles[index];
-    productsTableViewController.categoryid = (int)self.pageIDs[index];
+    //NSLog(@"%@",self.pageTitles[index]);
+    //NSLog(@"%@",self.pageIDs[index]);
+    //NSLog(@"%lu",(unsigned long)index);
+    productsTableViewController.categoryid = [self.pageIDs[index]integerValue];
+    NSLog(@"%@",self.pageIDs);
+    NSLog(@"cat id previously is %ld", (long)productsTableViewController.categoryid);
     productsTableViewController.pageIndex = index;
+    productsTableViewController.navigationItem = self.navigationItem;
+    
+    
     
     return productsTableViewController;
 }
