@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CartObject : NSObject
-@property(nonatomic, copy, readonly) NSString *catid, *index;
--(id)initWithTitle:(NSString*)catid :(NSString*)index;
+@interface CartObject : NSObject<NSCoding> {
+NSString *value;
+}
+@property NSInteger catid, index, quantity;
+-(id)init;
+//-(id)initWithTitle:(NSString*)catid :(NSString*)index;
 @end

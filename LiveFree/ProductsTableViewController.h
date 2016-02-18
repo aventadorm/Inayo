@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JSONHandler.h"
 #import "MBProgressHUD.h"
+#import "CartObject.h"
 
 @interface ProductsTableViewController : UITableViewController<JSONHandlerDelegate,MBProgressHUDDelegate>{
     NSMutableArray *imageArray, *nameArray, *sizeArray, *priceArray;

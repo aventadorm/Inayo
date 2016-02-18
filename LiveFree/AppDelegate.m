@@ -25,6 +25,12 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
+    //Init the cart nsuserdefaults
+    NSMutableDictionary *cartDictionary = [[NSMutableDictionary alloc]init];
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"cartDictionary"])
+    {[[NSUserDefaults standardUserDefaults]setObject:cartDictionary forKey:@"cartDictionary"];
+    }
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageController"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
@@ -36,6 +42,8 @@
     //navigationController.navigationBar.barTintColor = [UIColor colorWithRed:44.0/255.0 green:51.0/255.0 blue:87.0/255.0 alpha:1.0];
     //navigationController.navigationBar.barTintColor = [UIColor colorWithRed:64.0f green:64.0f blue:64.0f alpha:1.0];
     [self.window makeKeyAndVisible];
+    //NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    //[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
     return YES;
 }

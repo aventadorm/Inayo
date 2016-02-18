@@ -15,10 +15,29 @@
     CGRect tmpFrame;
     _label1 = [[UILabel alloc]initWithFrame:tmpFrame];
     [self addSubview:_label1];
+    
     _label2 = [[UILabel alloc]initWithFrame:tmpFrame];
     [self addSubview:_label2];
+    
     _label3 = [[UILabel alloc]initWithFrame:tmpFrame];
     [self addSubview:_label3];
+    
+    _plus = [[UIButton alloc]initWithFrame:tmpFrame];
+    UIImage *pImage = [UIImage imageNamed:@"plus.png"];
+    [_plus setImage:pImage forState:UIControlStateNormal];
+    //_plus.imageView.image=[UIImage imageNamed:@"plus.png"];
+    [self addSubview:_plus];
+    
+    _qLabel = [[UILabel alloc]initWithFrame:tmpFrame];
+    [self addSubview:_qLabel];
+    
+    _minus =[[UIButton alloc]initWithFrame:tmpFrame];
+    UIImage *mImage = [UIImage imageNamed:@"minus.png"];
+    [_minus setImage:mImage forState:UIControlStateNormal];
+    [self addSubview:_minus];
+    
+    //_minus = [[UIButton alloc]initWithFrame:tmpFrame];
+    //[self addSubview:_minus];
     
 }
 
@@ -68,10 +87,33 @@
     //Create the third label frame
     tmpFrame.origin.x = cellHeight + pad;
     tmpFrame.origin.y = 3*pad + (2*labelHeight);
-    tmpFrame.size.width = (3*cellHeight) - (2*pad);
+    tmpFrame.size.width = ((3*cellHeight) - (2*pad))/2;
     tmpFrame.size.height = labelHeight + pad;
     _label3.frame = tmpFrame;
     _label3.text= self.priceText;
+    
+    
+    //Layout the two cart buttons
+    tmpFrame.origin.x = pad + (5*cellHeight)/2;
+    tmpFrame.origin.y = 3*pad + (2*labelHeight);
+    tmpFrame.size.width = labelHeight + pad;
+    //tmpFrame.size.width = ((3*cellHeight) - (2*pad))/4;
+    tmpFrame.size.height = labelHeight + pad;
+    _plus.frame = tmpFrame;
+    
+    //Set the label
+    tmpFrame.origin.x = 2*pad + (5*cellHeight)/2+labelHeight;
+    tmpFrame.origin.y = 3*pad + (2*labelHeight);
+    tmpFrame.size.width = labelHeight + pad;
+    tmpFrame.size.height = labelHeight + pad;
+    _qLabel.frame = tmpFrame;
+    
+    
+    tmpFrame.origin.x = 3*pad + 2*labelHeight + (5*cellHeight)/2;
+    tmpFrame.origin.y = 3*pad + (2*labelHeight);
+    tmpFrame.size.width = labelHeight + pad;
+    tmpFrame.size.height = labelHeight + pad;
+    _minus.frame = tmpFrame;
     
 }
 

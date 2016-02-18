@@ -128,6 +128,10 @@
         cell.priceText = priceArray[indexPath.row];
         //NSLog(@"%@",cell.tlabel.text);
         cell.imageView.image = imageArray[indexPath.row];
+        [cell.plus addTarget:self action:@selector(plusClicked:) forControlEvents:UIControlEventTouchUpInside];
+        cell.plus.tag = indexPath.row;
+        cell.minus.tag = indexPath.row;
+        [cell.minus addTarget:self action:@selector(minusClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     else
         return cell;
@@ -135,7 +139,89 @@
     return cell;
     
 }
-
+-(void)plusClicked:(UIButton*)sender{
+    CartObject *cartobject = [[CartObject alloc]init];
+    cartobject.catid = self.categoryid;
+    cartobject.index = sender.tag;
+    cartobject.quantity++;
+    //NSLog(@"Catid old is %ld",(long)self.categoryid);
+    /* Testing only
+     NSLog(@"Catid old is %ld",(long)cartobject.catid);
+    NSLog(@"Index old is %ld",(long)cartobject.index);
+    NSData* data1 = [NSKeyedArchiver archivedDataWithRootObject:cartobject];
+    CartObject* cj2 = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
+    NSLog(@"Catid new is %ld", (long)cj2.catid);
+    NSLog(@"Index new is %ld",(long)cj2.index);*/
+    
+    NSString *key = [NSString stringWithFormat:@"catid=%ldindex=%ld",(long)self.categoryid,(long)sender.tag];
+    //NSLog(@"%@",key);
+    //NSMutableDictionary *cartDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:@"cartDictionary"];
+    NSMutableDictionary *cartDictionary = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"cartDictionary"]];
+    if([cartDictionary objectForKey:key]){
+        //NSLog(@"Object found");
+        
+        CartObject* cj = [NSKeyedUnarchiver unarchiveObjectWithData:[cartDictionary objectForKey:key]];
+        cj.quantity++;
+        [cartDictionary setObject:[NSKeyedArchiver archivedDataWithRootObject:cj] forKey:key];
+    
+    }/*
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      NSData *data = [defaults objectForKey:@"theKey"];
+      NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];*/
+    else{
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:cartobject];
+        [cartDictionary setObject:data forKey:key];
+        //NSLog(@"Click detected");
+    }
+    [[NSUserDefaults standardUserDefaults]setObject:cartDictionary forKey:@"cartDictionary"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    //Testing
+    for(NSString* key1 in cartDictionary) {
+        NSData *value = [cartDictionary objectForKey:key1];
+        CartObject* cj1 = [NSKeyedUnarchiver unarchiveObjectWithData:value];
+        NSLog(@"Category is %ld",(long)cj1.catid);
+        NSLog(@"Index is %ld",(long)cj1.index);
+        NSLog(@"Quantity is %ld",(long)cj1.quantity);
+    
+    //NSLog(@"%@",cartDictionary);
+    
+    
+    }
+}
+-(void)minusClicked:(UIButton*)sender{
+    CartObject *cartobject = [[CartObject alloc]init];
+    cartobject.catid = self.categoryid;
+    cartobject.index = sender.tag;
+    NSString *key = [NSString stringWithFormat:@"catid=%ldindex=%ld",(long)self.categoryid,(long)sender.tag];
+    NSMutableDictionary *cartDictionary = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"cartDictionary"]];
+    if([cartDictionary objectForKey:key]){
+        CartObject* cj = [NSKeyedUnarchiver unarchiveObjectWithData:[cartDictionary objectForKey:key]];
+        if(cj.quantity==1){
+            [cartDictionary removeObjectForKey:key];
+            //remove minus button
+                #warning TOODOOOOOOO
+        }
+        else{
+            cj.quantity--;
+            [cartDictionary setObject:[NSKeyedArchiver archivedDataWithRootObject:cj] forKey:key];
+        }
+        [[NSUserDefaults standardUserDefaults]setObject:cartDictionary forKey:@"cartDictionary"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }else
+    NSLog(@"Object doesnt exist");
+    //Testing
+    for(NSString* key1 in cartDictionary) {
+        NSData *value = [cartDictionary objectForKey:key1];
+        CartObject* cj1 = [NSKeyedUnarchiver unarchiveObjectWithData:value];
+        NSLog(@"Category is %ld",(long)cj1.catid);
+        NSLog(@"Index is %ld",(long)cj1.index);
+        NSLog(@"Quantity is %ld",(long)cj1.quantity);
+    
+}
+    NSLog(@"\n");
+}
 
 
 /*

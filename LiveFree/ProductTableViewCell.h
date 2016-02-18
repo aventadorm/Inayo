@@ -11,6 +11,7 @@
 @interface ProductTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property NSString *titleText, *quantityText, *priceText;
-@property (strong, nonatomic) UILabel *label1, *label2, *label3;
+@property (strong, nonatomic) UILabel *label1, *label2, *label3,*qLabel;
+@property(strong,nonatomic) UIButton *plus, *minus;
 
 @end
